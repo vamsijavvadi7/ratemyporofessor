@@ -9,28 +9,8 @@ import { signInWithPopup } from 'firebase/auth';
 
 export default function HomePage() {
   const [user, setUser] = useState(null);
-  const [userloading, setUserloading] = useState(false);
+  
   const router = useRouter();
-
-  if (userloading) {
-    return (
-      <Box
-        width="100vw"
-        height="100vh"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        style={{
-          background: 'rgba(0.5)', // Semi-transparent black background
-          overflow: 'hidden',
-          position: 'relative',
-          zIndex: 9999, // Ensure it overlays other content
-        }}
-      >
-        <Loader />
-      </Box>
-    );
-  }
 
   return (
     <Box
