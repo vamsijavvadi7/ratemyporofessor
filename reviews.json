@@ -1,0 +1,131 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. Alice Johnson",
+        "subject": "Computer Science",
+        "stars": 4,
+        "review": "Dr. Johnson is very knowledgeable and provides clear explanations. The coursework is challenging but rewarding."
+      },
+      {
+        "professor": "Dr. Bob Smith",
+        "subject": "Mathematics",
+        "stars": 5,
+        "review": "Dr. Smith makes complex topics easy to understand and is always available for help. Highly recommended!"
+      },
+      {
+        "professor": "Dr. Carol Davis",
+        "subject": "Physics",
+        "stars": 3,
+        "review": "Dr. Davis is a good lecturer, but the class can be quite demanding. Extra study is needed to keep up."
+      },
+      {
+        "professor": "Dr. David Wilson",
+        "subject": "Chemistry",
+        "stars": 4,
+        "review": "Dr. Wilson is enthusiastic and engaging. The labs are well-organized and provide a hands-on learning experience."
+      },
+      {
+        "professor": "Dr. Emily Brown",
+        "subject": "Biology",
+        "stars": 5,
+        "review": "Dr. Brown is passionate about the subject and makes learning enjoyable. Her exams are fair and well-structured."
+      },
+      {
+        "professor": "Dr. Frank Green",
+        "subject": "Economics",
+        "stars": 3,
+        "review": "Dr. Green covers the material thoroughly but can be a bit dry. The exams are quite challenging."
+      },
+      {
+        "professor": "Dr. Grace Lee",
+        "subject": "History",
+        "stars": 4,
+        "review": "Dr. Lee provides a comprehensive overview of historical events and encourages critical thinking. Class discussions are lively."
+      },
+      {
+        "professor": "Dr. Henry Adams",
+        "subject": "Philosophy",
+        "stars": 2,
+        "review": "Dr. Adams has a deep understanding of philosophy, but the lectures can be hard to follow. The grading is strict."
+      },
+      {
+        "professor": "Dr. Irene Martinez",
+        "subject": "Sociology",
+        "stars": 4,
+        "review": "Dr. Martinez is approachable and makes the subject matter relevant. Group projects are a major part of the grade."
+      },
+      {
+        "professor": "Dr. Jack Turner",
+        "subject": "Engineering",
+        "stars": 5,
+        "review": "Dr. Turner is an excellent instructor with practical industry experience. His classes are challenging but very rewarding."
+      },
+      {
+        "professor": "Dr. Karen Thompson",
+        "subject": "Art History",
+        "stars": 3,
+        "review": "Dr. Thompson is knowledgeable, but the class can be quite lecture-heavy. The exams are based on a lot of memorization."
+      },
+      {
+        "professor": "Dr. Larry Scott",
+        "subject": "Political Science",
+        "stars": 4,
+        "review": "Dr. Scott brings real-world examples into the classroom and encourages debate. Assignments are thought-provoking."
+      },
+      {
+        "professor": "Dr. Megan Clark",
+        "subject": "Environmental Science",
+        "stars": 5,
+        "review": "Dr. Clark is very engaging and passionate about the subject. The field trips are a great addition to the coursework."
+      },
+      {
+        "professor": "Dr. Nathan King",
+        "subject": "Statistics",
+        "stars": 3,
+        "review": "Dr. King is thorough but the pace of the class can be fast. Additional practice problems are necessary for exams."
+      },
+      {
+        "professor": "Dr. Olivia Young",
+        "subject": "Linguistics",
+        "stars": 4,
+        "review": "Dr. Young provides a clear understanding of language theories and is very supportive. The coursework is well-organized."
+      },
+      {
+        "professor": "Dr. Paul Wright",
+        "subject": "Music",
+        "stars": 4,
+        "review": "Dr. Wright is talented and passionate about music. The class is interactive and allows for creative expression."
+      },
+      {
+        "professor": "Dr. Quinn Harris",
+        "subject": "Theater",
+        "stars": 5,
+        "review": "Dr. Harris is inspiring and encourages students to explore their creativity. The projects are very engaging."
+      },
+      {
+        "professor": "Dr. Rachel Lewis",
+        "subject": "Gender Studies",
+        "stars": 4,
+        "review": "Dr. Lewis fosters an inclusive environment and encourages open discussion. The assignments are challenging but insightful."
+      },
+      {
+        "professor": "Dr. Steve Walker",
+        "subject": "Geography",
+        "stars": 3,
+        "review": "Dr. Walker covers the material well but the class can be quite theoretical. Fieldwork is a key component of the course."
+      },
+      {
+        "professor": "Dr. Tara Hill",
+        "subject": "Nutrition",
+        "stars": 4,
+        "review": "Dr. Hill is very knowledgeable and provides practical advice. The class includes hands-on activities that enhance learning."
+      },
+      {
+        "professor": "Dr. Ursula Robinson",
+        "subject": "Astronomy",
+        "stars": 5,
+        "review": "Dr. Robinson's passion for astronomy is evident. The lectures are engaging and the observational sessions are a highlight."
+      }
+    ]
+  }
+  
