@@ -1,14 +1,14 @@
 // pages/page.js
 'use client'
 
-import { useEffect, useState } from 'react';
 import { Box, Button, Card, CardContent, Stack, TextField, Typography } from '@mui/material';
-import { auth, db } from '../firebase';
-import { collection, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { marked } from 'marked';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import Loader from '../components/Loading';
+import { auth, db } from '../firebase';
 
 export default function ChatPage() {
   const [messages, setMessages] = useState([]);
@@ -38,7 +38,7 @@ export default function ChatPage() {
       const initialMessages = [
         {
           role: 'assistant',
-          content: "Hi! I'm the CareerGuru AI Coach. How can I help you today?",
+          content: "Hi! I'm your Rate My Professor AI Assistant. How can I help you today?",
         },
       ];
       setMessages(initialMessages);
@@ -129,11 +129,9 @@ export default function ChatPage() {
     setLoading(false);
   };
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
+ 
 
-  const isDark = theme === 'dark';
+
 
   return (
     <Box
@@ -144,9 +142,8 @@ export default function ChatPage() {
       justifyContent="center"
       alignItems="center"
       sx={{
-        background: 'rgb(2,0,36)',
-        background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
-        color: isDark ? 'white' : 'black',
+        backgroundColor:'#FFFFFF',
+        color: 'black',
         mt:'64px'
       }}
     >
@@ -198,19 +195,13 @@ export default function ChatPage() {
              <Card
   sx={{
     maxWidth: '70%',
-    bgcolor: isDark
-      ? message.role === 'assistant'
-        ? 'rgba(255, 255, 255, 0.1)' // Slightly transparent white for dark theme
-        : 'rgba(0, 0, 0, 0.7)' // Slightly transparent gray for user messages
-      : message.role === 'assistant'
-      ? 'rgba(0, 0, 0, 0.1)' // Slightly transparent black for light theme
-      : 'rgba(200, 200, 200, 0.7)', // Slightly transparent gray for user messages
+    bgcolor: '#F4F4F4', // Slightly transparent gray for user messages
     borderRadius: 2,
     boxShadow: 3,
-    padding: '10px', // Add padding to avoid text getting cut off
+    padding: '3px', // Add padding to avoid text getting cut off
     margin: '5px', // Add margin to ensure proper spacing
     overflowWrap: 'break-word', // Ensure long words break and don't overflow
-    wordBreak: 'break-word', // Ensure long words break and don't overflow
+    wordBreak: 'break-word'
   }}
 >
   <CardContent>
@@ -218,13 +209,7 @@ export default function ChatPage() {
       variant="body1"
       component="div"
       sx={{
-        color: isDark
-          ? message.role === 'assistant'
-            ? 'white' // White text for dark theme assistant messages
-            : 'white' // Black text for dark theme user messages
-          : message.role === 'assistant'
-          ? 'black' // Black text for light theme assistant messages
-          : 'black', // Black text for light theme user messages
+        color: 'black',
         overflowWrap: 'break-word', // Ensure long words break and don't overflow
         wordBreak: 'break-word', // Ensure long words break and don't overflow
       }}
@@ -236,61 +221,81 @@ export default function ChatPage() {
             </Box>
           ))}
         </Stack>
-
         <Box
-          component="form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            sendMessage();
-          }}
-          sx={{ display: 'flex', alignItems: 'center', width: '100%' }}
-        >
-          <TextField
-            fullWidth
-            multiline
-            maxRows={4}
-            variant="outlined"
-            placeholder="Type your message..."
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyPress={handleKeyPress}
-            sx={{
-              bgcolor: isDark ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
-              color: isDark ? 'white' : 'black',
-              borderRadius: '5px',
-              border: '1px solid',
-              borderColor: isDark ? 'primary.main' : 'secondary.main',
-            }}
-            InputProps={{
-              style: {
-                color: isDark ? 'white' : 'black',
-              },
-            }}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={sendMessage}
-            disabled={isLoading}
-            sx={{
-              minWidth: '50px',
-              minHeight: '50px',
-              background: isDark
-                ? 'linear-gradient(132deg, rgb(34, 181, 254) 0.00%, rgb(156, 43, 171) 100.00%)'
-                : 'linear-gradient(132deg, lightgray 0.00%, white 100.00%)',
-              color: isDark ? 'white' : 'black',
-              borderRadius: '50%',
-              marginLeft: '10px',
-              '&:hover': {
-                background: isDark
-                  ? 'linear-gradient(132deg, rgb(34, 181, 254) 0.00%, rgb(39, 43, 44) 100.00%)'
-                  : 'linear-gradient(132deg, lightgray 0.00%, white 100.00%)',
-              },
-            }}
-          >
-            Send
-          </Button>
-        </Box>
+  component="form"
+  onSubmit={(e) => {
+    e.preventDefault();
+    sendMessage();
+  }}
+  sx={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center', // Center horizontally
+    width: '100%', // Set the form to take full width of the container
+    position: 'sticky', // Sticky positioning
+    bottom: 0, // Stick to the bottom of the viewport or container
+    backgroundColor: '#FFFFFF', // Background color for the sticky section
+    zIndex: 1000, // Ensure it stays on top of other elements
+    padding: '5px 0px', // Padding for top and bottom spacing
+  }}
+>
+  <Box
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center', // Center horizontally
+      width: '60%', // Set the width of the inner box that contains the text field and button
+    }}
+  >
+    <TextField
+      fullWidth
+      multiline
+      maxRows={4}
+      variant="standard"
+      placeholder="Type your message..."
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      onKeyPress={handleKeyPress}
+      sx={{
+        bgcolor: '#F4F4F4',
+        color: 'black',
+        padding: '15px',
+        borderRadius: '20px',
+        border: 'none', // Remove the border
+        boxShadow: 'none',
+      }}
+      InputProps={{
+        disableUnderline: true,
+        style: {
+          color: 'black',
+        },
+      }}
+    />
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={sendMessage}
+      disabled={isLoading}
+      sx={{
+        minWidth: '50px',
+        minHeight: '50px',
+        backgroundColor: '#D7D7D7',
+        color: 'black',
+        borderRadius: '50%',
+        marginLeft: '10px',
+        '&:hover': {
+          backgroundColor: 'rgba(215, 215, 215, 0.4)', // Transparent grey effect on hover
+          color: 'black', // Keep the text color black on hover
+          boxShadow: '0px 0px 8px rgba(215, 215, 215, 0.4)', // Subtle glow or shadow effect with transparent grey
+        },
+      }}
+    >
+      Send
+    </Button>
+  </Box>
+</Box>
+
+
       </Stack>
     </Box>
   );
